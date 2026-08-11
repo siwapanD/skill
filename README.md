@@ -10,6 +10,7 @@ real app.
 ```
 setup-project/
 ├── CLAUDE.md                       # project rules Claude reads every session
+├── eslint.config.mjs                # enforced rules: no-explicit-any, no-console, etc.
 ├── .claude/
 │   ├── settings.json                # hooks + permission defaults
 │   ├── hooks/
@@ -30,11 +31,17 @@ setup-project/
    `CLAUDE.md` or `.claude/settings.json` — see notes below):
 
    ```bash
-   cp -r setup-project/.claude      your-app/
-   cp -r setup-project/scripts      your-app/
-   cp    setup-project/CLAUDE.md    your-app/
-   cp    setup-project/.env.example your-app/   # merge keys into your real .env.example
+   cp -r setup-project/.claude          your-app/
+   cp -r setup-project/scripts          your-app/
+   cp    setup-project/CLAUDE.md        your-app/
+   cp    setup-project/eslint.config.mjs your-app/   # merge if you already have one
+   cp    setup-project/.env.example     your-app/    # merge keys into your real .env.example
    ```
+
+   `eslint.config.mjs` needs `@eslint/eslintrc` as a dev dependency (used for the
+   `FlatCompat` shim that lets flat config extend the legacy `next/core-web-vitals`
+   preset) — `create-next-app` installs it by default, so this is usually already
+   there. If not: `pnpm add -D @eslint/eslintrc`.
 
 2. Wire the npm lifecycle hook into `your-app/package.json` so the checks run
    **every time `dev` starts**, whether a human or Claude runs it:
