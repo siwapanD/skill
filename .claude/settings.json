@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git status)",
+      "Bash(git log -n 5 --oneline)",
+      "Bash(git diff)",
+      "Bash(npm run test)",
+      "Bash(npm run lint)",
+      "Bash(npx tsc --noEmit)",
+      "Bash(node scripts/predev-check.mjs)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/predev-guard.mjs"
+          }
+        ]
+      }
+    ]
+  }
+}
