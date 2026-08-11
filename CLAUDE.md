@@ -37,6 +37,8 @@ Workflow (adapted from mattpocock/skills; they operationalize the principles abo
 - `tdd` — red → green loop, tests at agreed seams only (principle 4 in practice).
 - `diagnosing-bugs` — for hard bugs: build a tight red-capable feedback loop *before*
   hypothesizing. No repro command, no theory.
+- `post-mortem` (from thananon/9arm-skills) — after a fix is validated, write the
+  engineering record: root cause, mechanism, validation, why it slipped through.
 - `codebase-design` — shared vocabulary (module, interface, seam, depth) for designing
   deep modules; consult when shaping an interface or deciding where a seam goes.
 - `prototype` — throwaway code that answers a design question; never merged to main.
