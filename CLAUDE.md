@@ -5,6 +5,32 @@ rules for how Claude should work in this repo — from local dev all the way to
 production. Keep it in sync with reality — if a rule here stops matching the code, fix
 the rule or the code, don't let them drift apart.
 
+## What this repo actually is
+
+`setup-project` is a **template**, not a running app: a portable `.claude/` layer,
+this rules doc, and a predev safety hook meant to be copied into a real Next.js +
+Oracle project (see `README.md`). There is no `package.json`, `app/`, or `lib/` here —
+everything under **Directory conventions**, **Data & mutations**, and **Oracle
+conventions** below describes the *target* app's layout once the pieces are copied in,
+not this repo's current contents.
+
+Working on the template itself is different from working in a copied-in app:
+
+- No build/typecheck/test/lint commands run in this repo — there's nothing to compile.
+  `eslint.config.mjs` is payload for the downstream app; the only things it currently
+  has to lint here are `scripts/predev-check.mjs` and `.claude/hooks/predev-guard.mjs`.
+- **Verify the predev hook** with the repro in `README.md`'s "Verifying the hook
+  actually blocks" section — that's the closest thing to a test suite here.
+- **Skills** (`.claude/skills/*/SKILL.md`) are scaffolding recipes written for a
+  downstream app's code; edit the recipe text, there's no app code here to run them
+  against.
+- `docs/dev-workflow.md` describes the intended feature lifecycle *once this template
+  is adopted* into a real app — which skill fires at each step, gate order, etc.
+- `.env.example` ships generic Postgres/Auth.js-flavored placeholder keys for adopters
+  to replace (README's "Customizing" step). It doesn't match the Oracle-specific
+  conventions below (`ORACLE_USER`/`ORACLE_PASSWORD`/`ORACLE_CONNECT_STRING`) yet —
+  that's expected until a real project fills it in, not a bug to silently fix here.
+
 ## Working principles (Karpathy-inspired)
 
 These govern *how* Claude works here, before any code is written. Full version in
