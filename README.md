@@ -39,6 +39,10 @@ setup-project/
 │       └── karpathy-guidelines/     # full text of the working principles
 ├── scripts/
 │   └── predev-check.mjs             # the actual sanity checks (node/env/deps/port)
+├── docs/
+│   ├── dev-workflow.md              # feature lifecycle: which skill fires at each step
+│   └── dev-workflow.th.md           # Thai translation of dev-workflow.md
+├── install.sh                       # copies the template into an app, never overwrites
 └── .env.example
 ```
 
