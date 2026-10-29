@@ -16,12 +16,33 @@ setup-project/
 │   ├── hooks/
 │   │   └── predev-guard.mjs         # PreToolUse hook: blocks `dev` until checks pass
 │   └── skills/
-│       ├── new-page/SKILL.md        # scaffold app/**/page.tsx
-│       ├── new-api-route/SKILL.md   # scaffold app/api/**/route.ts
-│       ├── new-server-action/SKILL.md
-│       └── new-component/SKILL.md
+│       │   # scaffolding — encode this repo's templates
+│       ├── new-page/                # scaffold app/**/page.tsx (+ loading/layout)
+│       ├── new-api-route/           # scaffold app/api/**/route.ts
+│       ├── new-server-action/       # scaffold a Zod-validated Server Action
+│       ├── new-component/           # scaffold a server/client component (Tailwind)
+│       │   # design & discovery
+│       ├── ui-ux-pro-max/           # searchable UI/UX design data (vendored, MIT; needs python3)
+│       ├── reverse-engineer/        # legacy code / live UI / API / Oracle schema → verified spec
+│       ├── codebase-design/         # deep-module vocabulary: module, interface, seam
+│       ├── prototype/               # throwaway code to answer a design question
+│       ├── research/                # cited research notes from primary sources
+│       │   # workflow
+│       ├── grilling/                # stress-test a plan with rounds of questions
+│       ├── grill-me/                # short-form grilling interview
+│       ├── tdd/                     # red → green loop at agreed seams
+│       ├── diagnosing-bugs/         # build a red-capable feedback loop before theorizing
+│       ├── post-mortem/             # engineering record of a validated fix
+│       ├── resolving-merge-conflicts/
+│       ├── handoff/                 # compact a session into a handoff doc
+│       ├── writing-for-agents/      # read before editing CLAUDE.md or a skill
+│       └── karpathy-guidelines/     # full text of the working principles
 ├── scripts/
 │   └── predev-check.mjs             # the actual sanity checks (node/env/deps/port)
+├── docs/
+│   ├── dev-workflow.md              # feature lifecycle: which skill fires at each step
+│   └── dev-workflow.th.md           # Thai translation of dev-workflow.md
+├── install.sh                       # copies the template into an app, never overwrites
 └── .env.example
 ```
 
@@ -81,10 +102,12 @@ setup-project/
   `node_modules` is missing/stale instead of just warning.
 - **Permissions**: `.claude/settings.json` ships a conservative allow-list for read-only
   and common dev commands. Extend it as your workflow needs, don't broaden it blindly.
-- **Skills**: each skill in `.claude/skills/` is a scaffolding recipe (page, API route,
-  server action, component) written for App Router conventions. Edit them to match your
-  actual folder structure/ORM/auth choice once you pick one — they're deliberately
-  written with a couple of decision points called out rather than hard-coding a stack.
+- **Skills**: the four `new-*` skills are scaffolding recipes written for App Router
+  conventions. Edit them to match your actual folder structure/ORM/auth choice once you
+  pick one — they're deliberately written with a couple of decision points called out
+  rather than hard-coding a stack. The rest are workflow and design skills (see the tree
+  above and `CLAUDE.md`'s **Skills** section); `ui-ux-pro-max` needs `python3` on the
+  machine to run its search script.
 
 ## Verifying the hook actually blocks
 
