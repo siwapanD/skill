@@ -72,6 +72,13 @@ Workflow (adapted from mattpocock/skills; they operationalize the principles abo
   a cited Markdown file.
 - `resolving-merge-conflicts` — resolve by intent, hunk by hunk; never `--abort`.
 - `handoff` — compact a long session into a handoff doc for the next agent.
+- `ui-ux-pro-max` (vendored from nextlevelbuilder/ui-ux-pro-max-skill, MIT) — searchable
+  design data (styles, palettes, font pairings, UX/a11y rules, `nextjs` stack guidance)
+  via `python3 .claude/skills/ui-ux-pro-max/scripts/search.py`. Use when designing or
+  reviewing any UI; its results are recommendations — the rules in this file win.
+- `reverse-engineer` — turn a legacy codebase, live UI, undocumented API, or Oracle
+  schema into an evidence-backed spec (`docs/reverse-engineering/`), then a rebuild plan
+  in this stack.
 - `writing-for-agents` — read before editing this file or any skill.
 - `karpathy-guidelines` — full text of the working principles above.
 
