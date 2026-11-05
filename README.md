@@ -23,6 +23,7 @@ setup-project/
 │       ├── new-component/           # scaffold a server/client component (Tailwind)
 │       │   # design & discovery
 │       ├── ui-ux-pro-max/           # searchable UI/UX design data (vendored, MIT; needs python3)
+│       ├── diagram-design/          # editorial HTML/SVG diagrams + draw.io/Mermaid import (vendored, MIT)
 │       ├── reverse-engineer/        # legacy code / live UI / API / Oracle schema → verified spec
 │       ├── codebase-design/         # deep-module vocabulary: module, interface, seam
 │       ├── prototype/               # throwaway code to answer a design question
@@ -107,7 +108,8 @@ setup-project/
   pick one — they're deliberately written with a couple of decision points called out
   rather than hard-coding a stack. The rest are workflow and design skills (see the tree
   above and `CLAUDE.md`'s **Skills** section); `ui-ux-pro-max` needs `python3` on the
-  machine to run its search script.
+  machine to run its search script; `diagram-design` needs `python3` for its
+  import/check helpers, and Playwright + Chromium only for PNG export.
 
 ## Verifying the hook actually blocks
 

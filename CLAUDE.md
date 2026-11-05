@@ -76,6 +76,10 @@ Workflow (adapted from mattpocock/skills; they operationalize the principles abo
   design data (styles, palettes, font pairings, UX/a11y rules, `nextjs` stack guidance)
   via `python3 .claude/skills/ui-ux-pro-max/scripts/search.py`. Use when designing or
   reviewing any UI; its results are recommendations — the rules in this file win.
+- `diagram-design` (vendored from cathrynlavery/diagram-design, MIT) — editorial
+  HTML/SVG diagrams (architecture, flowchart, sequence, ER/db-schema, …) plus
+  draw.io/Mermaid/Excalidraw import. Use when a picture explains a design better than
+  prose; helpers run as `python3 -I .claude/skills/diagram-design/scripts/<helper>.py`.
 - `reverse-engineer` — turn a legacy codebase, live UI, undocumented API, or Oracle
   schema into an evidence-backed spec (`docs/reverse-engineering/`), then a rebuild plan
   in this stack.
